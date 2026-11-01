@@ -31,6 +31,18 @@ pkg install wget -y && wget https://raw.githubusercontent.com/afang120986/Androi
 
 · 查看后台控制台：tmux attach -t mc
 · 退出控制台（保持后台运行）：按下 Ctrl + B，松开，再按 D。
+🌐 进阶：如何让异地朋友连进来？
+
+本地开好服了，怎么让不在同一个 WiFi 下的朋友进来？千万别去折腾光猫和路由器映射！推荐使用免费的 Tailscale 组建虚拟局域网：
+
+1. 在你的 Termux 里安装并启动 Tailscale：
+pkg install tailscale -y
+tailscaled > /dev/null 2>&1 &
+tailscale up
+2. 终端会弹出一个带有 https://login.tailscale.com/... 的链接，复制它到浏览器打开，自己注册/登录一个账号授权。
+3. 让你的朋友也在手机上（或电脑上）下载 Tailscale 客户端，登录同一个账号。
+4. 输入 tailscale ip -4 查出你这台服务器的虚拟 IP（通常是 100.x.x.x）。
+5. 打开我的世界，输入 100.x.x.x:25565，朋友就能直接进服了！延迟极低，且完全免费！
 
 ⚠️ 免责声明 (Disclaimer)
 
@@ -82,7 +94,20 @@ Step 3: Run the Server
 
 · Enter Server Console: tmux attach -t mc
 · Detach (Keep running in background): Press Ctrl + B, release, then press D.
+🌐 Advanced: How to let friends join remotely?
 
+Once the server is running locally, how can your friends join from a different network? Do NOT mess with router port forwarding! We highly recommend using the free Tailscale to create a Virtual LAN:
+
+1. Install and start Tailscale in your Termux:
+   ```bash
+   pkg install tailscale -y
+   tailscaled > /dev/null 2>&1 &
+   tailscale up
+   ```
+2. The terminal will prompt a URL starting with https://login.tailscale.com/.... Copy it to your browser and log in to authorize.
+3. Ask your friend to install the Tailscale client on their device and log in with the same account.
+4. Run tailscale ip -4 to find your server's virtual IP (usually starts with 100.x.x.x).
+5. In Minecraft, enter 100.x.x.x:25565 and your friend can join! It's low-latency and completely free.
 ⚠️ Disclaimer
 
 1. This repository DOES NOT distribute any pirated Minecraft game files (.jar).
