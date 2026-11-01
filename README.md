@@ -38,3 +38,56 @@ pkg install wget -y && wget https://raw.githubusercontent.com/afang120986/Androi
 2. 所有游戏本体下载链接均指向 Minecraft Wiki 或 Mojang 官方源。
 3. 本教程及代码仅供技术交流与学习，请支持 Minecraft 正版。如果在部署过程中遇到 Bug，欢迎在 Issues 里提问。
 4. 如果觉得好用，请给我点一个免费的 ⭐ Star！
+
+
+🇬🇧 English Documentation
+
+📱 Android Minecraft Java Server Toolkit
+
+Turn your idle old Android phone into a 24/7 Minecraft Java Edition server! Zero cost, no Root required.
+⚠️ Memory Warning: This script allocates 4GB RAM by default. Devices with 12GB+ physical RAM are highly recommended. For 8GB devices, please modify the script (e.g., change -Xmx4G to -Xmx2G) to prevent the server from being killed by the Android OS.
+
+
+🚀 Quick Start Guide
+
+Step 1: Install Termux
+
+Please download Termux only from the official sources (DO NOT use the outdated versions from third-party app stores):
+
+· Termux Official F-Droid Page
+· Termux GitHub Releases
+
+Step 2: One-Click Script & Environment Setup
+
+Open Termux, copy and paste the entire line below, then press Enter:
+(This command will automatically update packages, install Java, and download the server script)
+
+```bash
+pkg install wget -y && wget https://raw.githubusercontent.com/afang120986/Android-MC-Java-Server-Toolkit-MC-Java-/main/start.sh && chmod +x start.sh && echo "✅ Script downloaded successfully!"
+```
+
+Step 3: Run the Server
+
+1. Download the official server.jar from Minecraft Wiki.
+2. Move server.jar to the current Termux directory.
+3. Run the following command to start:
+
+```bash
+./start.sh
+```
+
+(The script automatically allocates 4G RAM, accepts the EULA, and runs the server in the background using tmux.)
+
+💡 Useful Commands
+
+· Enter Server Console: tmux attach -t mc
+· Detach (Keep running in background): Press Ctrl + B, release, then press D.
+
+⚠️ Disclaimer
+
+1. This repository DOES NOT distribute any pirated Minecraft game files (.jar).
+2. All download links redirect to the official Minecraft Wiki or Mojang servers.
+3. This tutorial is for educational purposes only. Please support the official game.
+4. If you find this helpful, please give it a ⭐ Star!
+
+```
